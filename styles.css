@@ -29,7 +29,7 @@
         .header h1 {
             text-align: center;
             font-size: 3.5rem;
-            color: #00bcd4; /* Light Blue for Header */
+            color: #FF0000; /* Light Blue for Header */
             margin-bottom: 20px;
         }
 
@@ -43,7 +43,7 @@
 
         .menu-button {
             padding: 14px 28px;
-            background-color: #00bcd4; /* Light Blue Button */
+            background-color: #FF0000; /* Light Blue Button */
             border: none;
             border-radius: 8px;
             color: white;
@@ -56,13 +56,13 @@
         }
 
         .menu-button:hover {
-            background-color: #0097a7; /* Slightly Darker Blue for Hover */
+            background-color: #FF0000; /* Slightly Darker Blue for Hover */
             transform: translateY(-4px); /* Smooth hover effect */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow */
         }
 
         .menu-button:active {
-            background-color: #007c8b; /* Darker Blue for Active */
+            background-color: #FF0000; /* Darker Blue for Active */
             transform: translateY(2px); /* Button push effect */
         }
 
@@ -77,15 +77,15 @@
         h2 {
             font-size: 2rem;
             margin-bottom: 20px;
-            color: #00bcd4; /* Light Blue Titles */
+            color: #FF0000; /* Light Blue Titles */
         }
 
         select {
             padding: 12px;
             font-size: 1.1rem;
-            background-color: #e0f7fa; /* Light Blue for Select */
+            background-color: #FF0000; /* Light Blue for Select */
             border-radius: 8px;
-            border: 1px solid #00bcd4; /* Light Blue Border */
+            border: 1px solid #FF0000; /* Light Blue Border */
             color: #333;
             width: 100%;
             margin-bottom: 20px;
@@ -97,7 +97,7 @@
         }
 
         .rank-list li {
-            background-color: #e0f7fa; /* Light Blue List Items */
+            background-color: #FF0000; /* Light Blue List Items */
             padding: 14px;
             margin-bottom: 10px;
             border-radius: 8px;
@@ -106,7 +106,7 @@
         }
 
         .rank-list li:hover {
-            background-color: #b2ebf2; /* Light Blue Hover Effect */
+            background-color: #FF0000; /* Light Blue Hover Effect */
         }
 
         .profile-card {
@@ -122,7 +122,7 @@
         }
 
         .edit-profile {
-            background-color: #00bcd4; /* Light Blue for Edit Button */
+            background-color: #FF0000; /* Light Blue for Edit Button */
             padding: 12px 24px;
             border-radius: 8px;
             color: white;
@@ -137,18 +137,18 @@
         }
 
         .edit-profile:hover {
-            background-color: #0097a7; /* Darker Blue for Hover */
+            background-color: #FF0000; /* Darker Blue for Hover */
             transform: translateY(-4px); /* Smooth hover effect */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .edit-profile:active {
-            background-color: #007c8b; /* Darker Blue for Active */
+            background-color: #FF0000; /* Darker Blue for Active */
             transform: translateY(2px); /* Button push effect */
         }
 
         .news-list li {
-            background-color: #e0f7fa; /* Light Blue News Items */
+            background-color: #FF0000; /* Light Blue News Items */
             padding: 14px;
             margin-bottom: 10px;
             border-radius: 8px;
@@ -157,7 +157,7 @@
         }
 
         .news-list li:hover {
-            background-color: #b2ebf2; /* Light Blue Hover Effect */
+            background-color: #FF0000; /* Light Blue Hover Effect */
         }
 
         /* Mobile and Tablet Responsive Adjustments */
