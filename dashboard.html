@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+        <!-- Favicon (for browsers) -->
+    <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
+
+    <!-- Apple Touch Icon (for iOS home screen) -->
+    <link rel="apple-touch-icon" href="images/favicon.jpg" sizes="180x180">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .university-details, .event-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .rank-list li, .event-list li {
+            cursor: pointer;
+        }
+        #chatSection {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+         }
+
+        .chat-messages {
+            height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+
+        .chat-message {
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 60px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #contactUsSection {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="header">
+            <h1>Welcome, <span id="username"></span></h1>
+        </header>
+        
+        <div class="menu">
+            <button onclick="showEvents()" class="menu-button">Events</button>
+            <button onclick="showRankings()" class="menu-button">University Rankings</button>
+            <button onclick="viewProfile()" class="menu-button">Profile</button>
+            <button onclick="goToChat()" class="menu-button">Chat</button>
+            <button onclick="showNews()" class="menu-button">News</button>
+            <button onclick="contactUs()" class="menu-button">Contact Us</button>
+        </div>
+
+        <div id="eventsSection" class="content-section" style="display:none;">
+            <h2>Select a University to See Events</h2>
+            <select id="universitySelect" onchange="showUniversityEvents()">
+                <option value="none">--Select University--</option>
+                <option value="University of Baghdad Jadriya">University of Baghdad Jadriya</option>
+                <option value="American University of Iraq Baghdad">American University of Iraq Baghdad</option>
+                <option value="University of Technology">University of Technology</option>
+            </select>
+            <div id="eventsList" class="event-list"></div>
+        </div>
+
+        <div id="rankingsSection" class="content-section" style="display:none;">
+            <h2>University Rankings</h2>
+            <ul id="universityRanks" class="rank-list">
+                <li onclick="toggleDetails('baghdadDetails')">University of Baghdad Jadriya - 1000 points
+                    <div id="baghdadDetails" class="university-details">
+                        The University of Baghdad, located in Jadriya, is Iraq's largest and oldest university, founded in 1957. Situated along the scenic Tigris River, its Jadriya campus is known for its lush greenery and modern facilities, hosting a wide range of colleges, research centers, and libraries. It serves as a hub for academic excellence and innovation, offering programs in engineering, medicine, arts, and sciences, and plays a key role in shaping Iraq's intellectual and professional landscape. The representative for this University is ............
+                    </div>
+                </li>
+                <li onclick="toggleDetails('auibDetails')">American University of Iraq Baghdad - 800 points
+                    <div id="auibDetails" class="university-details">
+                        The American University of Iraq - Baghdad (AUIB) is a prestigious institution located in the heart of Baghdad, offering a world-class, English-language education modeled after the American liberal arts system. Established in 2018, AUIB boasts state-of-the-art facilities and a vibrant campus environment. The university provides a wide range of undergraduate and graduate programs, emphasizing critical thinking, innovation, and leadership to prepare students for global challenges and opportunities. The representative for this University is ............
+                    </div>
+                </li>
+                <li onclick="toggleDetails('uotDetails')">University of Technology - 500 points
+                    <div id="uotDetails" class="university-details">
+                        The University of Technology, Baghdad (UoT) is a leading technical university in Iraq, specializing in engineering, applied sciences, and technology. Established in 1975, it is located in central Baghdad and is renowned for its focus on innovation and research in fields such as computer science, mechanical engineering, civil engineering, and renewable energy. The university plays a vital role in Iraq's technological advancement and industrial development. The representative for this University is ............
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="profileSection" class="content-section" style="display:none;">
+            <h2>Your Profile</h2>
+            <div class="profile-card">
+                <p>Name: <span id="profileName"></span></p>
+                <p>Email: <span id="profileEmail"></span></p>
+                <button class="edit-profile">Edit Profile</button>
+            </div>
+        </div>
+        <div id="chatSection" class="content-section" style="display:none;">
+                <h2>Chat</h2>
+                <div id="chatMessages" class="chat-messages"></div>
+                <textarea id="chatInput" placeholder="Type a message..."></textarea>
+                <button onclick="sendMessage()">Send</button>
+        </div>
+
+<div id="newsSection" class="content-section" style="display:none;">
+    <h2 class="news-heading">Latest News</h2>
+    <ul id="newsList" class="news-list">
+        <li class="news-item" onclick="toggleNewsDetails('news1Details')">
+            <div class="news-summary">
+                <h3>University of Baghdad hosts a new research conference.</h3>
+            </div>
+            <div id="news1Details" class="news-details">
+                <h3>Details:</h3>
+                <p>By Haneen Abdulqader</p>
+                <p>The University of Baghdad successfully hosted its inaugural Research Conference last week, bringing together experts, researchers, and students from across the nation to discuss and showcase innovative research. The event, held in the university's Main Conference Hall, was a tremendous success, providing a platform for in-depth discussions on various scientific, technological, and social issues.</p>
+                <p>The conference kicked off with a keynote speech by Dr. Ahmed Al-Saadi, a leading researcher in the field of renewable energy, who emphasized the importance of collaborative research in solving the world's most pressing challenges. "Research is the key to unlocking the solutions to today's problems. It’s through sharing knowledge and working together that we can make lasting change," Dr. Al-Saadi remarked in his opening address.</p>
+                <p>Over the course of the day, attendees were treated to a series of presentations and workshops that spanned a wide range of topics, including environmental sustainability, artificial intelligence, healthcare innovations, and social justice. The presentations showcased some of the latest research from Iraqi scholars, as well as contributions from international researchers who have collaborated with local institutions.</p>
+                <p>One of the highlights of the conference was the session on "Technology for Social Good," where researchers presented new tools and applications aimed at addressing social challenges in Iraq. The session sparked lively discussions among students, academics, and professionals, all eager to explore how technology can be harnessed to create a more inclusive and sustainable society.</p>
+                <p>In addition to the academic presentations, the conference also featured several panel discussions, providing a platform for thought leaders to engage in debates on the future of research in Iraq and the Middle East. These discussions covered topics such as funding for research, the role of academia in national development, and strategies for overcoming obstacles in research methodologies.</p>
+                <p>The conference concluded with a closing ceremony, where the university's rector, Dr. Yaseen Al-Jabari, praised the event’s success and expressed the institution's commitment to fostering a culture of research and innovation. "This conference is only the beginning. We will continue to support research efforts that contribute to the development of Iraq and the global community," Dr. Al-Jabari stated.</p>
+                <p>The event was widely regarded as a step forward for the academic community in Iraq, strengthening connections between universities, researchers, and industry professionals. As the conference came to a close, many attendees expressed their excitement for the future of research in Iraq, eager to collaborate and build upon the ideas shared during the event.</p>
+            </div>
+        </li>
+    </ul>
+</div>
+            <div id="contactUsSection" class="content-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, feel free to reach out to us at:</p>
+            <p><a href="mailto:wechange.iq@gmail.com">wechange.iq@gmail.com</a></p>
+        </div>
+
+    </div>
+<script>
+    document.getElementById('username').textContent = localStorage.getItem('username');
+    document.getElementById('profileName').textContent = localStorage.getItem('username');
+    document.getElementById('profileEmail').textContent = localStorage.getItem('userEmail');
+    
+    function showEvents() {
+        toggleSections("eventsSection");
+    }
+
+    function showUniversityEvents() {
+        const selectedUniversity = document.getElementById("universitySelect").value;
+        const eventsList = document.getElementById("eventsList");
+
+        if (selectedUniversity === "University of Baghdad Jadriya") {
+            eventsList.innerHTML = 
+                `<li onclick="toggleEventDetails('baghdadEvent1Details')">Research Conference on AI
+                    <div id="baghdadEvent1Details" class="event-details">
+                        <h3>Theme: "Innovating for Progress: Student Research for a Better Tomorrow"</h3>
+                        <p>Date: March 20, 2025 - 9:00 AM to 5:00 PM</p>
+                        <p>Location: University of Baghdad, Conference Hall</p>
+                        <p>Event Overview: This Research Conference is an opportunity for We Change members to showcase their research...</p>
+                        <p>Registration: Register by March 10, 2025, via the We Change portal.</p>
+                    </div>
+                </li>
+                <li onclick="toggleEventDetails('baghdadEvent2Details')">Career Fair for Engineers
+                    <div id="baghdadEvent2Details" class="event-details">
+                        <h3>Theme: "Building the Future: Engineering Careers for We Change Members"</h3>
+                        <p>Date: April 10, 2025 - 10:00 AM to 3:00 PM</p>
+                        <p>Location: University of Baghdad, Engineering Building</p>
+                        <p>Event Overview: The Career Fair for Engineers is a We Change exclusive event...</p>
+                        <p>Registration: Sign up by April 3, 2025, via the We Change portal.</p>
+                    </div>
+                </li>`;
+        } else if (selectedUniversity === "American University of Iraq Baghdad") {
+            eventsList.innerHTML = 
+                `<li onclick="toggleEventDetails('auibEvent1Details')">International Student Meet-Up
+                    <div id="auibEvent1Details" class="event-details">
+                        <h3>Theme: "Cultural Connections: Building a Global Community at AUIB"</h3>
+                        <p>Date: March 22, 2025 - 5:00 PM to 8:00 PM</p>
+                        <p>Location: AUIB, Main Atrium</p>
+                        <p>Event Overview: A cultural meet-up for international students to share...</p>
+                        <p>Registration: Sign up by March 15, 2025, via the We Change portal.</p>
+                    </div>
+                </li>
+                <li onclick="toggleEventDetails('auibEvent2Details')">Business Entrepreneurship Workshop
+                    <div id="auibEvent2Details" class="event-details">
+                        <h3>Theme: "Empowering We Change Entrepreneurs: Turning Ideas Into Impact"</h3>
+                        <p>Date: April 10, 2025 - 10:00 AM to 3:00 PM</p>
+                        <p>Location: AUIB, Business and Innovation Center</p>
+                        <p>Event Overview: A workshop focused on essential entrepreneurship concepts...</p>
+                        <p>Registration: Register by April 3, 2025, via the We Change portal.</p>
+                    </div>
+                </li>`;
+        } else if (selectedUniversity === "University of Technology") {
+            eventsList.innerHTML = 
+                `<li onclick="toggleEventDetails('uotEvent1Details')">Robotics Innovation Hackathon
+                    <div id="uotEvent1Details" class="event-details">
+                        <h3>Theme: "Innovative Robotics Solutions by We Change Members"</h3>
+                        <p>Date: May 5-6, 2025 - 9:00 AM (Day 1) to 6:00 PM (Day 2)</p>
+                        <p>Location: University of Technology, Robotics and Automation Lab</p>
+                        <p>Event Overview: A hackathon for creating innovative robotics solutions...</p>
+                        <p>Registration: Register via the We Change portal.</p>
+                    </div>
+                </li>`;
+        } else {
+            eventsList.innerHTML = "<p>Select a valid university to see events.</p>";
+        }
+    }
+ 
+    function showRankings() {
+        toggleSections("rankingsSection");
+    }
+    
+    function viewProfile() {
+        toggleSections("profileSection");
+    }
+
+    function goToChat() {
+    toggleSections("chatSection");
+    loadChatMessages();
+}
+
+    const socket = io('http://wechangeiq.com'); // Adjust this URL if necessary
+
+    socket.on('loadMessages', (messages) => {
+        messages.forEach((message) => displayMessage(message));
+    });
+
+    socket.on('newMessage', (message) => {
+        displayMessage(message);
+    });
+
+    function sendMessage() {
+        const messageInput = document.getElementById('chatInput');
+        const message = messageInput.value.trim();
+
+        if (message) {
+            const user = localStorage.getItem('username');
+            const newMessage = { username: user, text: message, timestamp: new Date().toLocaleTimeString() };
+
+            // Emit the message to the server
+            socket.emit('sendMessage', newMessage);
+
+            // Update the chat window
+            displayMessage(newMessage);
+            messageInput.value = ''; // Clear input
+        }
+    }
+
+    function displayMessage(message) {
+        const chatBox = document.getElementById('chatBox');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = `[${message.timestamp}] ${message.username}: ${message.text}`;
+        chatBox.appendChild(messageElement);
+    }
+    
+    function showNews() {
+        toggleSections("newsSection");
+    }
+
+    function contactUs() {
+        toggleSections("contactUsSection");
+    }
+
+    function toggleSections(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.style.display = "none");
+        document.getElementById(sectionId).style.display = "block";
+    }
+
+    function toggleEventDetails(detailsId) {
+        const detailsElement = document.getElementById(detailsId);
+        if (detailsElement.style.display === "block") {
+            detailsElement.style.display = "none";
+        } else {
+            detailsElement.style.display = "block";
+        }
+    }
+
+    function toggleNewsDetails(newsId) {
+        const details = document.getElementById(newsId);
+        if (details.style.display === "none") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
+        }
+    }
+
+    function toggleDetails(detailsId) {
+        const detailsElement = document.getElementById(detailsId);
+        if (detailsElement.style.display === "block") {
+            detailsElement.style.display = "none";
+        } else {
+            detailsElement.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
