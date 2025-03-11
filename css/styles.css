@@ -462,3 +462,130 @@ footer p {
         transform: translateY(0);
     }
 }
+
+/* News Section */
+.news {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.news h1 {
+    font-size: 2.5em;
+    color: #b22222; /* Red theme */
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+}
+
+.news-articles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-article {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.news-article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.news-article h2 {
+    font-size: 1.5em;
+    color: #b22222; /* Red theme */
+    margin-bottom: 10px;
+}
+
+.news-article p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.news-article a {
+    color: #ff6f61; /* Light red */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.news-article a:hover {
+    color: #e63900; /* Darker red */
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 2.5em;
+    color: #b22222; /* Red theme */
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact button {
+    background: #ff6f61; /* Light red */
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+    background: #e63900; /* Darker red */
+    transform: translateY(-5px);
+}
