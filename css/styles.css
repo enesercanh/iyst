@@ -14,10 +14,21 @@ header {
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the content inside the header */
+    position: relative; /* For positioning the logo */
+}
+
+header .logo {
+    display: inline-block; /* Make the logo inline */
+    margin: 0 auto; /* Center the logo horizontally */
 }
 
 header .logo img {
     height: 50px;
+}
+
+nav {
+    margin-top: 10px; /* Add some space between the logo and navigation */
 }
 
 nav ul {
@@ -25,7 +36,7 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the navigation links */
 }
 
 nav ul li {
