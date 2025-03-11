@@ -332,3 +332,133 @@ footer p {
 .program-item ul li a:hover {
     color: #e63900; /* Darker red */
 }
+
+/* About Us Section */
+.about {
+    padding: 80px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 2.5em;
+    color: #b22222; /* Red theme */
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.about p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease;
+}
+
+.about .mission, .about .vision {
+    background: #f9f9f9;
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    text-align: left;
+    animation: fadeIn 1.5s ease;
+}
+
+.about .mission h2, .about .vision h2 {
+    color: #b22222; /* Red theme */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.about .mission p, .about .vision p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.8;
+}
+
+.about .team {
+    margin-top: 60px;
+}
+
+.about .team h2 {
+    color: #b22222; /* Red theme */
+    font-size: 2em;
+    margin-bottom: 30px;
+    animation: fadeInDown 1s ease;
+}
+
+.about .team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.about .team-member {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about .team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about .team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.about .team-member h3 {
+    font-size: 1.2em;
+    color: #b22222; /* Red theme */
+    margin-bottom: 10px;
+}
+
+.about .team-member p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
