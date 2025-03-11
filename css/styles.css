@@ -278,3 +278,46 @@ footer p {
         font-size: 1em;
     }
 }
+
+/* Programs Section */
+.programs {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.program-item {
+    background: #fff;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.program-item h2 {
+    color: #b22222; /* Red theme */
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.program-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.program-item ul li {
+    margin: 15px 0;
+}
+
+.program-item ul li a {
+    color: #ff6f61; /* Light red */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.program-item ul li a:hover {
+    color: #e63900; /* Darker red */
+}
