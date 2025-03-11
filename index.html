@@ -3,205 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - IYST</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="images/favicon.jpg" sizes="180x180">
-
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background-color: #ffffff;
-            color: #333333;
-        }
-
-        /* Fixed login form at the top */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #FF0000; /* Updated color */
-            color: #ffffff;
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-container form {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .login-container input, .login-container button {
-            padding: 8px 15px;
-            border-radius: 5px;
-            border: none;
-            font-size: 1rem;
-        }
-
-        .login-container input {
-            width: 200px;
-        }
-
-        .login-container button {
-            padding: 12px 30px;
-            background-color: #FF0000; /* Primary color */
-            color: white;
-            border-radius: 8px;
-            border: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-container button:hover {
-            background-color: #0397a5; /* Slightly darker shade for hover */
-            transform: translateY(-2px); /* Elevate the button on hover */
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-container button:focus {
-            outline: none;
-            border: 2px solid #007bff; /* Blue border on focus */
-        }
-
-        main {
-            margin-top: 100px; /* Adding space for the fixed header */
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        h1, h2, p {
-            text-align: center;
-            color: #FF0000; /* Updated color */
-        }
-
-        section {
-            background-color: #f7f9fc;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        section.impact-section {
-            background-color: #f7f9fc; /* Matches other sections */
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        ul li::before {
-            content: "• ";
-            color: #FF0000; /* Updated color */
-        }
-
-        .impact-section {
-            background-color: #dbe9ff;
-        }
-
-        .vision, .mission, .impact {
-            color: #333333;
-            
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #FF0000; /* Blue background */
-            color: white; /* White text */
-            font-size: 1rem;
-        }
-
-    </style>
+    <title>Iraq Youth Scientist Team</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <div class="login-container">
-            <form id="loginForm" onsubmit="loginUser(event)">
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
+        <div class="logo">
+            <img src="images/logo.png" alt="Iraq Youth Scientist Team Logo">
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main>
-        <h1>Welcome to Iraq Youth Scientists Team</h1>
-        <p>
-            <strong>IYST</strong> is the first youth-led science initiative in Iraq, dedicated to empowering the next generation of scientists and innovators. IYST provides young Iraqis with opportunities to explore scientific fields, engage in research, and collaborate on innovative projects. Through workshops, competitions, and community-driven events, the team aims to inspire curiosity, foster creativity, and contribute to Iraq’s scientific advancement.</p>
+    <section class="hero">
+        <h1>Welcome to the Iraq Youth Scientist Team</h1>
+        <p>Empowering the next generation of scientists and innovators in Iraq.</p>
+        <a href="programs.html" class="cta-button">Explore Our Programs</a>
+    </section>
 
-        <!-- Vision Section -->
-        <section class="vision">
-            <h2>Our Vision</h2>
-            <p>To cultivate a generation of young Iraqi scientists and innovators who lead breakthroughs in science and technology, contributing to the sustainable development and global recognition of Iraq as a hub for scientific excellence.</p>
-        </section>
+    <section class="highlights">
+        <h2>Our Highlights</h2>
+        <div class="highlight-item">
+            <img src="images/workshop.jpg" alt="Science Workshops">
+            <h3>Science Workshops</h3>
+            <p>Join our hands-on workshops to explore the wonders of science.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="images/research.jpg" alt="Research Grants">
+            <h3>Research Grants</h3>
+            <p>Apply for grants to fund your innovative research projects.</p>
+        </div>
+        <div class="highlight-item">
+            <img src="images/conference.jpg" alt="Annual Conference">
+            <h3>Annual Conference</h3>
+            <p>Participate in our annual conference to showcase your work.</p>
+        </div>
+    </section>
 
-        <!-- Mission Section -->
-        <section class="mission">
-            <h2>Our Mission</h2>
-            <p>To empower Iraqi youth by providing access to quality scientific education, hands-on research opportunities, and a collaborative community. IYST aims to inspire innovation, nurture critical thinking, and bridge the gap between science and society, fostering a culture of discovery and progress in Iraq.</p>
-        </section>
-
-        <!-- Impact Section -->
-        <section class="impact impact-section">
-            <h2>Our Impact</h2>
-            <p>
-                Since our inception, IYST has:
-            </p>
-            <ul>
-                <li>Supported over 200 young people.</li>
-                <li>Organized 20+ online and in-person events and workshops.</li>
-                <li>Published 7+ research papers.</li>
-                <li>Contributed to the personal growth and professional development of our members.</li>
-            </ul>
-        </section>
-    </main>
-    
     <footer>
-        <p>&copy; 2025 IYST. All rights reserved.</p>
+        <p>&copy; 2023 Iraq Youth Scientist Team. All rights reserved.</p>
     </footer>
-    
-    <script>
-        function loginUser(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
 
-            // Dummy check for credentials
-            if (email === "faosa414@gmail.com" && password === "Faos@2025Str0ngPass") {
-                localStorage.setItem('username', 'Sami');
-                localStorage.setItem('userEmail', email);
-                window.location.href = "dashboard.html";
-            } else if (email === "laviier1994@gmail.com" && password === "L@vi1er1994_StrongPwd") {
-                localStorage.setItem('username', 'Haneen');
-                localStorage.setItem('userEmail', email);
-                window.location.href = "dashboard.html";
-            } else if (email === "enesalhurmuzi@gmail.com" && password === "enes_password") {
-                localStorage.setItem('username', 'Enes');
-                localStorage.setItem('userEmail', email);
-                window.location.href = "dashboard.html";
-            } else {
-                alert("Invalid credentials");
-            }
-        }
-    </script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
