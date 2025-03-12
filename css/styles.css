@@ -12,31 +12,24 @@ body {
 header {
     background: #b22222; /* Red theme */
     color: #fff;
-    padding: 20px 0;
+    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center the content inside the header */
-    position: relative; /* For positioning the logo */
-}
-
-header .logo {
-    display: inline-block; /* Make the logo inline */
-    margin: 0 auto; /* Center the logo horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
 }
 
 header .logo img {
     height: 50px;
 }
 
-nav {
-    margin-top: 10px; /* Add some space between the logo and navigation */
-}
-
+/* Navigation Menu (Default for Laptop/Desktop) */
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Center the navigation links */
 }
 
 nav ul li {
@@ -53,6 +46,62 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #ff6f61; /* Light red for hover */
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.hamburger {
+    display: none; /* Hidden on laptop/desktop */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Responsive Design for Mobile/Phone */
+@media (max-width: 768px) {
+    /* Show Hamburger Menu */
+    .hamburger {
+        display: flex; /* Visible on mobile */
+    }
+
+    /* Hide Navigation Menu by Default */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #b22222;
+        display: none; /* Hidden by default on mobile */
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Stack Navigation Links Vertically */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+    }
+
+    /* Show Navigation When Menu is Toggled */
+    nav.active {
+        display: flex;
+    }
 }
 
 /* Hero Section */
