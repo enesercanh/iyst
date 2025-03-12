@@ -2,13 +2,14 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Website loaded!");
 
-    // Example: Add smooth scrolling for anchor links
+    // Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+            }
         });
     });
 
@@ -19,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (hamburger && navMenu) {
         hamburger.addEventListener("click", function () {
             navMenu.classList.toggle("active");
+        });
+
+        // Close Menu When Clicking Outside
+        document.addEventListener("click", function (e) {
+            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove("active");
+            }
         });
     }
 });
