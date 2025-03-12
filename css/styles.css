@@ -590,52 +590,6 @@ footer p {
     transform: translateY(-5px);
 }
 
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header .logo img {
-    height: 60px;
-    display: block;
-    margin: 0 auto;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    margin: 20px 0 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ffdd57;
-}
 
 /* Participant Profile Section */
 .participant-profile {
