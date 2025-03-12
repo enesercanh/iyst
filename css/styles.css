@@ -342,6 +342,20 @@ footer p {
     color: #e63900; /* Darker red */
 }
 
+.program-notice {
+    background: #fff3cd; /* Light yellow background */
+    border-left: 5px solid #ffc107; /* Yellow border */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #856404; /* Dark yellow text */
+}
+
+.program-notice strong {
+    color: #b22222; /* Red theme for emphasis */
+}
+
 /* About Us Section */
 .about {
     padding: 80px 20px;
