@@ -1,19 +1,24 @@
 // Simple JavaScript for interactivity (e.g., smooth scrolling, animations)
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Website loaded!');
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Website loaded!");
 
     // Example: Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+        anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+                behavior: "smooth"
             });
         });
     });
-});
 
-function toggleMenu() {
+    // Toggle Mobile Menu
+    const hamburger = document.querySelector(".hamburger");
     const navMenu = document.getElementById("navMenu");
-    navMenu.classList.toggle("active");
-}
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+    }
+});
