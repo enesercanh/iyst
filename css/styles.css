@@ -77,7 +77,13 @@ nav ul li a:hover {
 }
 
 /* Responsive Design for Mobile/Phone */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    nav {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+}
     /* Show Hamburger Menu */
     .hamburger {
         display: flex; /* Visible on mobile */
