@@ -135,6 +135,7 @@ nav ul li a:hover {
 }
 
 /* Mentors Section */
+/* Mentors Section */
 .mentors {
     padding: 60px 20px;
     background: #f9f9f9;
@@ -148,6 +149,7 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    animation: fadeInUp 1s ease; /* Add animation here */
 }
 
 .mentor-group h2 {
@@ -304,6 +306,7 @@ footer p {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    animation: fadeInUp 1s ease; /* Add animation here */
 }
 
 .program-item h2 {
