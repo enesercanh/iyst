@@ -134,7 +134,13 @@ nav ul li a:hover {
     color: #666;
 }
 
-/* Mentors Section */
+/* Hover Effects */
+.program-item:hover, .mentor-group:hover {
+    transform: scale(1.02); /* Slightly scale up */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 /* Mentors Section */
 .mentors {
     padding: 60px 20px;
