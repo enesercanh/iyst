@@ -589,3 +589,169 @@ footer p {
     background: #e63900; /* Darker red */
     transform: translateY(-5px);
 }
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffdd57;
+}
+
+/* Participant Profile Section */
+.participant-profile {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.participant-profile h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+
+.participant-profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #2575fc;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.participant-profile img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.participant-profile .bio {
+    text-align: left;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.participant-profile .bio h2 {
+    font-size: 24px;
+    color: #6a11cb;
+    margin-bottom: 15px;
+}
+
+.participant-profile .bio p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.participant-profile .bio p:first-of-type {
+    margin-top: 0;
+}
+
+.participant-profile .bio p:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.participant-profile {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .participant-profile {
+        padding: 15px;
+    }
+
+    .participant-profile h1 {
+        font-size: 28px;
+    }
+
+    .participant-profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .participant-profile .bio h2 {
+        font-size: 20px;
+    }
+
+    .participant-profile .bio p {
+        font-size: 14px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
